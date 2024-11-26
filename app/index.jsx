@@ -1,33 +1,63 @@
-import { StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import {
+  Image,
+  ScrollView,
+  Text,
+  View,
+} from "react-native";
+import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
+import images from "../constants/images";
 import { router } from "expo-router";
-import CustomButton from "../components/CustomButton"
+import globalStyles from "../assets/style.js";
+import CustomButton from "../components/CustomButton";
 
 const Index = () => {
-  const [form, setForm] = useState({
-    email: "",
-    password: "",
-  });
-  const [loading, setLoading] = useState(false);
-  const handleSubmit = () => {
-    router.replace("/Home");
-  };
   return (
-    <SafeAreaView>
-      <Text className="mt-10 text-blue-500 text-3xl">Index</Text>
-      <CustomButton
-            title="Sign In"
-            handlePress={handleSubmit}
-            containerStyles="mt-7"
-            isLoading={loading}
+    <SafeAreaView className="bg-primary h-full">
+      <ScrollView contentContainerStyle={{ height: "100%" }}>
+        <View className="w-full justify-center items-center h-full px-4">
+          <View className="flex-row items-center justify-center gap-2">
+            <Image
+              source={images.Logo}
+              className="w-[50px] h-[50px]"
+              resizeMode="contain"
+            />
+            <Text className="text-white font-bold text-start text-2xl">
+              MoneyMingle
+            </Text>
+          </View>
+          <Image
+            source={images.cards}
+            className="max-w-[380px] w-full h-[450px] -mb-10"
+            resizeMethod="contain"
           />
+          <View className="relative">
+            <Text className="text-2xl text-white font-bold text-center">
+              Effortless Money Management <Text>with </Text>
+              <Text
+                style={globalStyles.blueTextColor}
+                className="primary-blue-text text-3xl"
+              >
+                MoneyMingle
+              </Text>
+            </Text>
+          </View>
+          <Text className="text-sm font-pregular text-gray-100 mt-2 text-center">
+            Empower Your Financial Future: Where Wisdom Meets Innovation.
+          </Text>
+          <CustomButton
+            title="Continue"
+            handlePress={() => router.push("/SignIn")}
+            containerStyles="w-full mt-14"
+            textStyles=""
+            isLoading={false}
+          />
+        </View>
+      </ScrollView>
       <StatusBar backgroundColor="#161622" style="light" />
     </SafeAreaView>
   );
 };
 
 export default Index;
-
-const styles = StyleSheet.create({});
