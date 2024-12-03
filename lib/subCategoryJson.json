@@ -1,0 +1,155 @@
+[
+    {
+        "id": 1,
+        "catId": 1,
+        "data": [
+            {
+                "id": 1,
+                "name": "Groceries"
+            },
+            {
+                "id": 2,
+                "name": "Restaurants"
+            },
+            {
+                "id": 3,
+                "name": "Cafes"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "catId": 2,
+        "data": [
+            {
+                "name": "Fuel"
+            },
+            {
+                "name": "Public transit"
+            },
+            {
+                "name": "Vehicle maintenance"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "catId": 3,
+        "data": [
+            {
+                "name": "Electricity"
+            },
+            {
+                "name": "Water"
+            },
+            {
+                "name": "Internet"
+            },
+            {
+                "name": "Phone bills"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "catId": 4,
+        "data": [
+            {
+                "name": "Clothes"
+            },
+            {
+                "name": "Electronics"
+            },
+            {
+                "name": "Household items"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "catId": 5,
+        "data": [
+            {
+                "name": "Movies"
+            },
+            {
+                "name": "Subscriptions"
+            },
+            {
+                "name": "Games"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "catId": 6,
+        "data": [
+            {
+                "name": "Medical expenses"
+            },
+            {
+                "name": "Insurance"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "catId": 7,
+        "data": [
+            {
+                "name": "Bus"
+            },
+            {
+                "name": "Trains"
+            },
+            {
+                "name": "Flights"
+            },
+            {
+                "name": "Accommodations"
+            },
+            {
+                "name": "Fun Activities"
+            },
+            {
+                "name": "Food"
+            },
+            {
+                "name": "Local transport"
+            },
+            {
+                "name": "Travel insurance"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "catId": 8,
+        "data": [
+            {
+                "name": "Emergency fund"
+            },
+            {
+                "name": "Mutual Funds"
+            },
+            {
+                "name": "Stocks"
+            },
+            {
+                "name": "FD's"
+            },
+            {
+                "name": "Retirement"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "catId": 9,
+        "data": [
+            {
+                "name": "Others"
+            }
+        ]
+    }
+]

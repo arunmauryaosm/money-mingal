@@ -13,5 +13,8 @@ const globalStyles = StyleSheet.create({
 });
 
 // #333547  - progress bar bg color
+// #232533  - modal bg color
+// #1F1F1F  - card bg color
+// #A0AECB  - cancel button bg color
 
 export default globalStyles;

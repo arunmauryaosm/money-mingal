@@ -1,14 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import React from "react";
 
 const Profile = () => {
   return (
-    <View>
-      <Text>Profile</Text>
-    </View>
-  )
-}
+    <SafeAreaView className="bg-primary h-full">
+      <View className="my-6 px-4">
+        <Text className="text-white font-semibold" style={styles.heading}>
+          Profile
+        </Text>
+      </View>
+    </SafeAreaView>
+  );
+};
 
-export default Profile
+export default Profile;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  heading: {
+    fontSize: 24,
+  },
+});

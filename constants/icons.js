@@ -11,7 +11,7 @@ import eyeHide from "../assets/icons/eye-hide.png";
 import eye from "../assets/icons/eye.png";
 import play from "../assets/icons/play.png";
 import notification from "../assets/icons/notification.png";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 
 export default {
   play,
@@ -28,4 +28,6 @@ export default {
   eye,
   notification,
   backArrow: <Ionicons name="chevron-back" size={24} color="#fff" />,
+  dropdown: <MaterialIcons name="keyboard-arrow-down" size={24} color="#fff" />,
+  calendar: <MaterialCommunityIcons name="calendar-today" size={24} color="#fff" />,
 };

@@ -11,7 +11,7 @@ const Transactions = ({ record }) => {
 
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={handleTxnDetails}>
-      <View className="px-3 py-3 rounded-xl" style={styles.container}>
+      <View className="p-3 rounded-xl" style={styles.container}>
         <View className="d-flex flex-row justify-between">
           <View className="d-flex flex-row gap-3">
             <View
@@ -52,7 +52,7 @@ export default Transactions;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#232533",
+    backgroundColor: "#1F1F1F",
   },
   type: {
     fontSize: 15,

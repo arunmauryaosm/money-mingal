@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Food & Dining"
+    },
+    {
+        "id": 2,
+        "name": "Transportation"
+    },
+    {
+        "id": 3,
+        "name": "Bills & Utilities"
+    },
+    {
+        "id": 4,
+        "name": "Shopping"
+    },
+    {
+        "id": 5,
+        "name": "Entertainment"
+    },
+    {
+        "id": 6,
+        "name": "Health"
+    },
+    {
+        "id": 7,
+        "name": "Travel"
+    },
+    {
+        "id": 8,
+        "name": "Savings & Investments"
+    },
+    {
+        "id": 9,
+        "name": "Miscellaneous"
+    }
+]

@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
-import React, { useEffect } from "react";
+import { Keyboard, StyleSheet, View } from "react-native";
+import React, { useEffect, useState } from "react";
 import { Tabs } from "expo-router";
 import { Pressable } from "react-native";
 import Animated, {
@@ -10,8 +10,13 @@ import Animated, {
 } from "react-native-reanimated";
 import { tabIcons } from "../../constants/tabIcon";
 
-const TabBar = ({ state, descriptors, navigation }) => {
+const TabBar = ({ state, descriptors, navigation, isKeyboardVisible }) => {
   const colors = { primary: "#3a9ad9", textColor: "#CDCDE0" };
+
+  // Hide the tab bar when the keyboard is visible
+  if (isKeyboardVisible) {
+    return null;
+  }
 
   return (
     <View style={styles.tabbar}>
@@ -91,44 +96,62 @@ const TabBarButton = (props) => {
 };
 
 const TabLayout = () => {
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+
+  useEffect(() => {
+    const showSubscription = Keyboard.addListener("keyboardDidShow", () => {
+      setIsKeyboardVisible(true);
+    });
+    const hideSubscription = Keyboard.addListener("keyboardDidHide", () => {
+      setIsKeyboardVisible(false);
+    });
+
+    return () => {
+      showSubscription.remove();
+      hideSubscription.remove();
+    };
+  }, []);
+
   return (
-    <Tabs tabBar={(props) => <TabBar {...props} />}>
-      <Tabs.Screen
-        name="Home"
-        options={{
-          title: "Home",
-          headerShown: false,
-        }}
-      />
-      <Tabs.Screen
-        name="Budget"
-        options={{
-          title: "Budget",
-          headerShown: false,
-        }}
-      />
-      <Tabs.Screen
-        name="Create"
-        options={{
-          title: "Create",
-          headerShown: false,
-        }}
-      />
-      <Tabs.Screen
-        name="Wallet"
-        options={{
-          title: "Wallet",
-          headerShown: false,
-        }}
-      />
-      <Tabs.Screen
-        name="Profile"
-        options={{
-          title: "Profile",
-          headerShown: false,
-        }}
-      />
-    </Tabs>
+    <>
+      <Tabs tabBar={(props) => <TabBar {...props} isKeyboardVisible={isKeyboardVisible} />} >
+        <Tabs.Screen
+          name="Home"
+          options={{
+            title: "Home",
+            headerShown: false,
+          }}
+        />
+        <Tabs.Screen
+          name="Budget"
+          options={{
+            title: "Budget",
+            headerShown: false,
+          }}
+        />
+        <Tabs.Screen
+          name="Create"
+          options={{
+            title: "Create",
+            headerShown: false,
+          }}
+        />
+        <Tabs.Screen
+          name="Wallet"
+          options={{
+            title: "Wallet",
+            headerShown: false,
+          }}
+        />
+        <Tabs.Screen
+          name="Profile"
+          options={{
+            title: "Profile",
+            headerShown: false,
+          }}
+        />
+      </Tabs>
+    </>
   );
 };
 
