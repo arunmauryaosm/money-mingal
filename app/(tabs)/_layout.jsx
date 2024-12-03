@@ -132,7 +132,7 @@ const TabLayout = () => {
         <Tabs.Screen
           name="Create"
           options={{
-            title: "Create",
+            title: "Add",
             headerShown: false,
           }}
         />

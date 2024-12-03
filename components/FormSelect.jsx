@@ -94,6 +94,7 @@ const FormSelect = ({
             />
             {title == "Select a subcategory" && (
               <TouchableOpacity
+                activeOpacity={0.7}
                 className="mt-4 py-3 bg-[#3a9ad9] rounded-xl"
                 onPress={() => {
                   setModalVisible(false), setShowSubCatModal(true);
@@ -105,6 +106,7 @@ const FormSelect = ({
               </TouchableOpacity>
             )}
             <TouchableOpacity
+              activeOpacity={0.7}
               className="mt-4 py-3 bg-[#A0AECB] rounded-xl"
               onPress={() => setModalVisible(false)}
             >

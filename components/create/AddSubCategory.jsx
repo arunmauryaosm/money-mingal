@@ -52,6 +52,7 @@ const AddSubCategory = ({
             </View>
           </ScrollView>
           <TouchableOpacity
+            activeOpacity={0.7}
             className="mt-4 py-3 bg-[#3a9ad9] rounded-xl"
             onPress={() => {
               setShowSubCatModal(false);
@@ -60,6 +61,7 @@ const AddSubCategory = ({
             <Text className="text-center text-white font-psemibold">Save</Text>
           </TouchableOpacity>
           <TouchableOpacity
+            activeOpacity={0.7}
             className="mt-4 py-3 bg-[#A0AECB] rounded-xl"
             onPress={() => setShowSubCatModal(false)}
           >

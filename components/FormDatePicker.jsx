@@ -24,6 +24,7 @@ const FormDatePicker = ({
       <Text className="text-base text-gray-100 font-pmedium">{title}</Text>
       <View className="d-flex flex-row items-center mt-1">
         <TouchableOpacity
+          activeOpacity={0.7}
           className="d-flex flex-row w-full justify-between border-2 border-black-200 text-white rounded-2xl items-start font-psemibold h-16 px-4"
           onPress={() => setShow(true)}
         >
