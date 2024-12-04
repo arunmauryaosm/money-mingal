@@ -9,6 +9,15 @@ const globalStyles = StyleSheet.create({
   },
   grayBackgroundColor: {
     backgroundColor: "#232533"
+  },
+  tabMarginBottom: {
+    marginBottom: 92,
+  },
+  tabPaddingBottom: {
+    paddingBottom: 60, 
+  },
+  floatingActionBtnBg: {
+    backgroundColor: "#c2a71d"
   }
 });
 

@@ -1,14 +1,9 @@
-import {
-  Image,
-  ScrollView,
-  Text,
-  View,
-} from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import images from "../constants/images";
-import { router } from "expo-router";
+import { Link, router } from "expo-router";
 import globalStyles from "../assets/style.js";
 import CustomButton from "../components/CustomButton";
 

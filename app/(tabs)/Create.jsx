@@ -8,6 +8,7 @@ import FormField from "../../components/FormField";
 import CreateCustomButton from "../../components/CreateCustomButton";
 import AddSubCategory from "../../components/create/AddSubCategory";
 import FormDatePicker from "../../components/FormDatePicker";
+import globalStyles from "../../assets/style";
 
 const Create = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -35,10 +36,10 @@ const Create = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <View className="my-6 px-4">
+        <Text className="text-white font-semibold" style={styles.heading}>
+          Add Expense
+        </Text>
         <ScrollView>
-          <Text className="text-white font-semibold" style={styles.heading}>
-            Add Expense
-          </Text>
           <View className="flex-1">
             <FormSelect
               title="Select a category"

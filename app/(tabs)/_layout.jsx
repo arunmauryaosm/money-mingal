@@ -114,7 +114,11 @@ const TabLayout = () => {
 
   return (
     <>
-      <Tabs tabBar={(props) => <TabBar {...props} isKeyboardVisible={isKeyboardVisible} />} >
+      <Tabs
+        tabBar={(props) => (
+          <TabBar {...props} isKeyboardVisible={isKeyboardVisible} />
+        )}
+      >
         <Tabs.Screen
           name="Home"
           options={{
