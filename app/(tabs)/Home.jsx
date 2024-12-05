@@ -203,41 +203,38 @@ const Home = () => {
 
   return (
     <SafeAreaView className="bg-primary h-full">
-      <FlatList
-        data={records}
-        keyExtractor={(item) => item.id}
-        contentContainerStyle={styles.flatListContent}
-        showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => (
-          <View className="mx-5 my-4">
-            <Transactions record={item} />
-          </View>
-        )}
-        ListHeaderComponent={() => (
-          <View className="my-6 px-4 space-y-6">
-            <View className="justify-between items-start flex-row mb-6">
-              <TouchableOpacity
-                activeOpacity={0.7}
-                onPress={() => handleSubmit()}
-              >
-                <View>
-                  <Text className="font-pmedium text-sm text-gray-100">
-                    Welcome,
-                  </Text>
-                  <Text className="text-2xl font-psemibold text-white">
-                    Arun Maurya
-                  </Text>
-                </View>
-              </TouchableOpacity>
-              <View className="my-auto p-[4px] border-2 rounded-lg border-gray-800 ">
-                <Image
-                  source={icons.notification}
-                  className="w-7 h-8"
-                  resizeMode="contain"
-                />
-              </View>
-            </View>
+      <View className="my-6 px-4">
+        <View className="justify-between items-start flex-row mb-6">
+          <TouchableOpacity activeOpacity={0.7} onPress={() => handleSubmit()}>
             <View>
+              <Text className="font-pmedium text-sm text-gray-100">
+                Welcome,
+              </Text>
+              <Text className="text-2xl font-psemibold text-white">
+                Arun Maurya
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <View className="my-auto p-[4px] border-2 rounded-lg border-gray-800 ">
+            <Image
+              source={icons.notification}
+              className="w-7 h-8"
+              resizeMode="contain"
+            />
+          </View>
+        </View>
+        <FlatList
+          data={records}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={styles.flatListContent}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item }) => (
+            <View>
+              <Transactions record={item} />
+            </View>
+          )}
+          ListHeaderComponent={() => (
+            <View className="my-4">
               <DonutGraph
                 widthAndHeight={widthAndHeight}
                 series={series}
@@ -245,9 +242,9 @@ const Home = () => {
                 heading="₹ 7000"
               />
             </View>
-          </View>
-        )}
-      />
+          )}
+        />
+      </View>
     </SafeAreaView>
   );
 };
@@ -256,7 +253,6 @@ export default Home;
 
 const styles = StyleSheet.create({
   flatListContent: {
-    paddingBottom: 80,
-    paddingHorizontal: 3,
+    paddingBottom: 140,
   },
 });
