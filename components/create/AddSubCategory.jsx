@@ -14,6 +14,7 @@ const AddSubCategory = ({
   showSubCatModal,
   setShowSubCatModal,
   categoryJson,
+  setIsCatModalOpen
 }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [subCatName, setSubCatName] = useState("");
@@ -39,6 +40,7 @@ const AddSubCategory = ({
                 onValueChange={setSelectedOption}
                 otherStyles="mt-7"
                 empty="No options found"
+                setIsCatModalOpen={setIsCatModalOpen}
               />
               <FormField
                 title="Subcategory name"
@@ -51,24 +53,28 @@ const AddSubCategory = ({
               />
             </View>
           </ScrollView>
-          <TouchableOpacity
-            activeOpacity={0.7}
-            className="mt-4 py-3 bg-[#3a9ad9] rounded-xl"
-            onPress={() => {
-              setShowSubCatModal(false);
-            }}
-          >
-            <Text className="text-center text-white font-psemibold">Save</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            activeOpacity={0.7}
-            className="mt-4 py-3 bg-[#A0AECB] rounded-xl"
-            onPress={() => setShowSubCatModal(false)}
-          >
-            <Text className="text-center text-[#222] font-psemibold">
-              Close
-            </Text>
-          </TouchableOpacity>
+          <View className="d-flex flex-row justify-between">
+            <TouchableOpacity
+              activeOpacity={0.7}
+              className="mt-4 py-3 bg-[#A0AECB] rounded-xl w-[45%]"
+              onPress={() => setShowSubCatModal(false)}
+            >
+              <Text className="text-center text-[#222] font-psemibold">
+                Close
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.7}
+              className="mt-4 py-3 bg-[#3a9ad9] rounded-xl w-[45%]"
+              onPress={() => {
+                setShowSubCatModal(false);
+              }}
+            >
+              <Text className="text-center text-white font-psemibold">
+                Save
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </Modal>

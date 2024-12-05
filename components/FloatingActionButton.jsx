@@ -3,9 +3,9 @@ import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import globalStyles from "../assets/style";
 
-const FloatingActionButton = () => {
+const FloatingActionButton = ({setShowFabModal}) => {
   const handlePress = () => {
-    console.log("FAB Pressed");
+    setShowFabModal(true)
   };
 
   return (

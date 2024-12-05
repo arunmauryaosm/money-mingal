@@ -15,6 +15,7 @@ const Create = () => {
   const [subCatData, setSubCatData] = useState([]);
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [isCatModalOpen, setIsCatModalOpen] = useState(false)
   const [showSubCatModal, setShowSubCatModal] = useState(false);
   const [formData, setFormData] = useState({
     expenceName: "",
@@ -33,9 +34,13 @@ const Create = () => {
     }
   }, [selectedOption]);
 
+  const isModalOpen = isCatModalOpen || showSubCatModal;
+
   return (
     <SafeAreaView className="bg-primary h-full">
-      <View className="my-6 px-4">
+      <View className="my-6 px-4"
+        style={isModalOpen ? globalStyles.modalBackground : null}
+        >
         <Text className="text-white font-semibold" style={styles.heading}>
           Add Expense
         </Text>
@@ -49,6 +54,7 @@ const Create = () => {
               onValueChange={setSelectedOption}
               otherStyles="mt-7"
               empty="No options found"
+              setIsCatModalOpen={setIsCatModalOpen}
             />
             <FormSelect
               title="Select a subcategory"
@@ -59,6 +65,7 @@ const Create = () => {
               otherStyles="mt-7"
               empty="No options found for subcategory"
               setShowSubCatModal={setShowSubCatModal}
+              setIsCatModalOpen={setIsCatModalOpen}
             />
             <FormField
               title="Expense Name"
@@ -107,11 +114,13 @@ const Create = () => {
           </View>
         </ScrollView>
       </View>
+      {isModalOpen && <View style={globalStyles.overlay} />}
       {showSubCatModal && (
         <AddSubCategory
           showSubCatModal={showSubCatModal}
           setShowSubCatModal={setShowSubCatModal}
           categoryJson={categoryJson}
+          setIsCatModalOpen={setIsCatModalOpen}
         />
       )}
     </SafeAreaView>

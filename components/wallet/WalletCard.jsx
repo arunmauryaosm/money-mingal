@@ -10,11 +10,11 @@ const WalletCard = ({ setShowWalletModal }) => {
       // colors={["#1e293b", "#10b981"]}
       start={{ x: 0, y: 0 }}
       end={{ x: 0.8, y: 0.5 }}
-      style={{ borderRadius: 20 }}
+      style={[{ borderRadius: 20 }]}
     >
       <View
         className="d-flex flex-col justify-around p-4"
-        style={styles.boxContainer}
+        style={[styles.boxContainer]}
       >
         <View className="d-flex flex-row justify-between">
           <View className="d-flex flex-row gap-3">

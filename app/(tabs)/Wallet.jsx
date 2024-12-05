@@ -7,6 +7,7 @@ import { Image } from "react-native";
 import globalStyles from "../../assets/style";
 import FloatingActionButton from "../../components/FloatingActionButton";
 import WalletModal from "../../components/wallet/WalletModal";
+import FABModal from "../../components/wallet/FABModal";
 
 const walletJson = [
   {
@@ -82,9 +83,14 @@ const walletJson = [
 
 const Wallet = () => {
   const [showWalletModal, setShowWalletModal] = useState(false);
+  const [showFabModal, setShowFabModal] = useState(false);
+  const isModalOpen = showWalletModal || showFabModal;
   return (
     <SafeAreaView className="bg-primary h-full">
-      <View className="my-6 px-4">
+      <View
+        className={`my-6 px-4`}
+        style={isModalOpen ? globalStyles.modalBackground : null}
+      >
         <Text className="text-white font-semibold" style={styles.heading}>
           Wallet
         </Text>
@@ -159,12 +165,19 @@ const Wallet = () => {
             </View>
           ))}
         </ScrollView>
-        <FloatingActionButton />
+        <FloatingActionButton setShowFabModal={setShowFabModal} />
       </View>
+      {isModalOpen && <View style={globalStyles.overlay} />}
       {showWalletModal && (
         <WalletModal
           showWalletModal={showWalletModal}
           setShowWalletModal={setShowWalletModal}
+        />
+      )}
+      {showFabModal && (
+        <FABModal
+          showFabModal={showFabModal}
+          setShowFabModal={setShowFabModal}
         />
       )}
     </SafeAreaView>

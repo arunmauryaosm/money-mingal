@@ -18,6 +18,7 @@ const FormSelect = ({
   otherStyles,
   empty,
   setShowSubCatModal,
+  setIsCatModalOpen
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [searchText, setSearchText] = useState("");
@@ -40,6 +41,7 @@ const FormSelect = ({
     setModalVisible(false);
     setSearchText("");
     setFilteredOptions(options);
+    setIsCatModalOpen(false)
   };
 
   return (
@@ -48,7 +50,7 @@ const FormSelect = ({
       <TouchableOpacity
         activeOpacity={0.7}
         className={`border-2 border-black-200 w-full h-16 px-4 text-white rounded-2xl focus:border-blue-900 flex-row items-center mt-1`}
-        onPress={() => setModalVisible(true)}
+        onPress={() => {setModalVisible(true), setIsCatModalOpen(true)}}
       >
         <Text
           className={`flex-1 ${
@@ -65,7 +67,7 @@ const FormSelect = ({
         visible={modalVisible}
         transparent={true}
         animationType="slide"
-        onRequestClose={() => setModalVisible(false)}
+        onRequestClose={() => {setModalVisible(false), setIsCatModalOpen(false)}}
       >
         <View className="flex-1 justify-end bg-black-800 bg-opacity-50">
           <View className="bg-[#232533] p-4 rounded-t-2xl space-y-4 h-[65%]">
@@ -92,28 +94,30 @@ const FormSelect = ({
                 <Text className="text-center text-gray-400 mt-4">{empty}</Text>
               }
             />
-            {title == "Select a subcategory" && (
+            <View className="d-flex flex-row justify-between">
               <TouchableOpacity
                 activeOpacity={0.7}
-                className="mt-4 py-3 bg-[#3a9ad9] rounded-xl"
-                onPress={() => {
-                  setModalVisible(false), setShowSubCatModal(true);
-                }}
+                className={`mt-4 py-3 bg-[#A0AECB] rounded-xl ${title == "Select a subcategory" ? "w-[45%]" : "w-[100%]"} `}
+                onPress={() => {setModalVisible(false), setIsCatModalOpen(false)}}
               >
-                <Text className="text-center text-white font-psemibold">
-                  Add Subcategory
+                <Text className="text-center text-[#222] font-psemibold">
+                  Close
                 </Text>
               </TouchableOpacity>
-            )}
-            <TouchableOpacity
-              activeOpacity={0.7}
-              className="mt-4 py-3 bg-[#A0AECB] rounded-xl"
-              onPress={() => setModalVisible(false)}
-            >
-              <Text className="text-center text-[#222] font-psemibold">
-                Close
-              </Text>
-            </TouchableOpacity>
+              {title == "Select a subcategory" && (
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  className="mt-4 py-3 bg-[#3a9ad9] rounded-xl  w-[45%]"
+                  onPress={() => {
+                    setModalVisible(false), setShowSubCatModal(true), setIsCatModalOpen(false);
+                  }}
+                >
+                  <Text className="text-center text-white font-psemibold">
+                    Add Subcategory
+                  </Text>
+                </TouchableOpacity>
+              )}
+            </View>
           </View>
         </View>
       </Modal>
